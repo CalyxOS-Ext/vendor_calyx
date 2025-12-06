@@ -16,6 +16,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 ifneq (eng,$(TARGET_BUILD_VARIANT))
 ifneq (,$(wildcard vendor/calyx/signing/keys/releasekey.pk8))
 PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/calyx/signing/keys/releasekey
+PRODUCT_MAINLINE_BLUETOOTH_SEPOLICY_DEV_CERTIFICATES := $(dir $(PRODUCT_DEFAULT_DEV_CERTIFICATE))
 ifneq ($(TARGET_NO_OEM_UNLOCK),true)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.oem_unlock_supported=1
 endif
